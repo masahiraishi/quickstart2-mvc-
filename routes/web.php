@@ -1,5 +1,9 @@
 <?php
 
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,3 +18,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//タスクの一覧
+Route::get('/tasks','Taskcontroller@index');
+
+//タスクの保存
+Route::post('/tasks','Taskcontroller@store');
+
+//タスクの削除
+Route::delete('/task/{task}','Taskcontroller@destroy');
